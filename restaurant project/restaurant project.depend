@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1705649625 source:c:\users\karima\desktop\karima\restaurant-management\restaurant project\main.cpp
+	<iostream>
+	<vector>
+	<map>
+
