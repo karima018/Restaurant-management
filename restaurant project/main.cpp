@@ -1,46 +1,48 @@
+
 #include <iostream>
-#include <vector>
-#include <map>
 using namespace std;
-class Restaurant {
-public:
-    void addReservation(const string& name, const string& time) {
-        reservations[time].push_back(name);
-    }
-
-    string getNameByTime(const string& time) {
-        if (reservations.find(time) != reservations.end()) {
-            return reservations[time][0];
-        }
-        return "No reservation at that time";
-    }
-
-private:
-    map<string, vector<string>> reservations;
-};
 
 int main() {
-    Restaurant restaurant;
+  int choice;
+  cout << "1. Menu Card\n2. Restaurant Reservation\n3. Bill Payment\nChoice: ";
+  cin >> choice;
 
-    restaurant.addReservation("karima", "12:00");
-    restaurant.addReservation("Abid", "1:00");
-    restaurant.addReservation("Khadiza", "10:00");
-    restaurant.addReservation("Mim", "11:00");
-    restaurant.addReservation("zerin", "3:00");
-    restaurant.addReservation("Munni", "3:00 PM");
-    restaurant.addReservation("Munni", "10:00 AM");
+  if (choice == 1) {
+    // Display menu card
+    cout << "**Menu Card**\n";
+    cout << "1. Pizza - 400tk\n";
+    cout << "2. Pasta - 350tk\n";
+    cout << "3. Salad - 200tk\n";
+    cout << "1. cake - 500tk\n";
+    cout << "2. juice - 150tk\n";
+    cout << "3. ice-cream -220tk\n";
+  } else if (choice == 2) {
+    // Make reservation
+    int numTables;
+cout << "Enter number of tables (maximum 10): ";
+cin >> numTables;
+
+if (numTables > 10) {
+  cout << "Sorry, we can only reserve a maximum of 10 tables.\n";
+} else {
+  cout << "Reservation confirmed for " << numTables << " tables.\n";
+}
 
 
+    cout << "Reservation confirmed for " << numTables << " tables.\n";
+  } else if (choice == 3) {
+    // Pay bill
+    float billAmount;
+cout << "Enter bill amount: ";
+cin >> billAmount;
 
+if (billAmount > 0) {
+  cout << "Bill paid successfully.\n";
+} else {
+  cout << "Invalid bill amount.\n";
+}
+  }
 
-    cout << "Name at 12:00: " << restaurant.getNameByTime("12:00") << "\n";
-    cout << "Name at 13:00: " << restaurant.getNameByTime("1:00") << "\n";
-    cout << "Name at 10:00: " << restaurant.getNameByTime("10:00") << "\n";
-    cout << "Name at 11:00: " << restaurant.getNameByTime("11:00") << "\n";
-    cout << "Name at 3:00: " << restaurant.getNameByTime("3:00") << "\n";
-    cout << "Name at 3:00PM: " << restaurant.getNameByTime("3:00PM") << "\n";
-    cout << "Name at 10:00 AM: " << restaurant.getNameByTime("3:00 AM") << "\n";
+  return 0;
 
-
-    return 0;
 }
