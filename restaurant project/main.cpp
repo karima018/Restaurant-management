@@ -3,8 +3,28 @@
 using namespace std;
 
 int main() {
+    string username = "user";
+    string password = "1234";
+    string user;
+    string pass;
+    cout << "Hello, Welcome to the App Login!" << std::endl;
+    cout << "Enter Your username: ";
+    cin >> user;
+    if (user == username){
+        cout << "Enter password: " << endl;
+        cin >> pass;
+        if (pass == password){
+            cout << "Successful Login!" << endl;
+        }
+        else {
+            cout << "Incorrect Password!" << endl;
+        }
+    }
+    else {
+        cout << "Incorrect Username!" << endl;
+    }
   int choice;
-  cout << "1. Menu Card\n2. Restaurant Reservation\n3. Bill Payment\nChoice: ";
+cout << "1. Menu Card\n2. Restaurant Reservation\n3. Bill Payment\nChoice: ";
   cin >> choice;
 
   if (choice == 1) {
